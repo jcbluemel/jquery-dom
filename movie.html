@@ -23,12 +23,19 @@
     function addMovie(evt) {
       let movieName = $(".movie-form").eq(0).val();
       let movieRating = $(".movie-form").eq(1).val();
-      $(".movie-list").append(`<li>${movieName} : ${movieRating}</li>`);
+      let newMovieLi = `<li>${movieName} : ${movieRating} <button>Delete movie</button></li>`;
+      $(".movie-list").append(newMovieLi);
 
       evt.preventDefault();
       // console.log($(evt.target).eq(0).val());
     }
+
+    function deleteLi(evt) {
+      $(evt.target).parent().remove();
+    }
+
     $('form').submit(addMovie);
+    $('ul').on('click', 'button', deleteLi)
   </script>
 </body>
 </html>
