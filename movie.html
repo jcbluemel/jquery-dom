@@ -20,6 +20,8 @@
 
   <script src="https://unpkg.com/jquery"></script>
   <script>
+    /** Takes in an evt, stops the page from reloading and adds the user 
+     *  input for movie name and rating to the UL*/
     function addMovie(evt) {
       let movieName = $(".movie-form").eq(0).val();
       let movieRating = $(".movie-form").eq(1).val();
@@ -30,12 +32,13 @@
       // console.log($(evt.target).eq(0).val());
     }
 
+    /** Takes in an event and deletes that event's parent. */
     function deleteLi(evt) {
       $(evt.target).parent().remove();
     }
 
     $('form').submit(addMovie);
-    $('ul').on('click', 'button', deleteLi)
+    $('ul').on('click', 'button', deleteLi) // Deleted li if button is clicked.
   </script>
 </body>
 </html>
