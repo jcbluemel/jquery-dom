@@ -76,8 +76,12 @@
 <script>
   // 1.
   $(".col-sm-8 img").addClass("image-center");
-  //2
+  // 2.
   $(".col-sm-8 p:last").remove();
+  // 3.
+  let pixelSize = Math.floor(Math.random() * 100);
+  $("#title").css("font-size", `${pixelSize}px`);
+
 </script>
 </body>
 
