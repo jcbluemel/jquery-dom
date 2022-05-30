@@ -16,12 +16,19 @@
   </form>
 
   <ul class="movie-list">
-
   </ul>
 
   <script src="https://unpkg.com/jquery"></script>
   <script>
+    function addMovie(evt) {
+      let movieName = $(".movie-form").eq(0).val();
+      let movieRating = $(".movie-form").eq(1).val();
+      $(".movie-list").append(`<li>${movieName} : ${movieRating}</li>`);
 
+      evt.preventDefault();
+      // console.log($(evt.target).eq(0).val());
+    }
+    $('form').submit(addMovie);
   </script>
 </body>
 </html>
