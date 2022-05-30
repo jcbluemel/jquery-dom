@@ -93,7 +93,12 @@
   }
 
   $(".mb-5").change(changeBodyBckgrn);
+  // 7.
+  function deleteImg(evt) {
+    $(evt.target).remove();
+  }
 
+  $(".container").on("click", "img", deleteImg)
 
 </script>
 </body>
