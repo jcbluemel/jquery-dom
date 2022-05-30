@@ -85,6 +85,14 @@
   $(".col-sm-4 ol").append("<li>Jordan and Joel power hour!</li>");
   // 5.
   $(".col-sm-4 ol").empty().append("<p>Sorry we had the list!</p>");
+  // 6.
+  function changeBodyBckgrn() {
+    const $rgbInput = $(".form-control");
+    console.log($rgbInput.eq(0).val()); // Testing if we accessed vals correctly
+    $("body").css('background-color', `rgb(${$rgbInput.eq(0).val()}, ${$rgbInput.eq(1).val()}, ${$rgbInput.eq(2).val()})`);
+  }
+
+  $(".mb-5").change(changeBodyBckgrn);
 
 
 </script>
