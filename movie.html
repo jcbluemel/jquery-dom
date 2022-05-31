@@ -9,9 +9,9 @@
 <body>
   <form>
     <label for="movie">Movie Name:</label>
-    <input name="movie" class="movie-form" type="text" minlength="2">
+    <input id="movie-name" name="movie" class="movie-form" type="text" minlength="2">
     <label for="rating">Rating:</label>
-    <input name="rating" class="movie-form" type="number" min="1" max="10">
+    <input id="movie-rating" name="rating" class="movie-form" type="number" min="1" max="10">
     <button type="submit">Add Movie</button>
   </form>
 
@@ -23,15 +23,17 @@
     /** Takes in an evt, stops the page from reloading and adds the user 
      *  input for movie name and rating to the UL*/
     function addMovie(evt) {
-      let movieName = $(".movie-form").eq(0).val();
-      let movieRating = $(".movie-form").eq(1).val();
-      let newMovieLi = `<li>${movieName} : ${movieRating} <button>Delete movie</button></li>`;
-      $(".movie-list").append(newMovieLi);
-
       evt.preventDefault();
-      // console.log($(evt.target).eq(0).val());
-    }
 
+      let movieName = $("#movie-name").val();
+      let movieRating = $("#movie-rating").val();
+
+      let newMovieLi = `<li>${movieName} : ${movieRating} 
+        <button>Delete movie</button></li>`;
+
+      $(".movie-list").append(newMovieLi);
+    }
+    // function createMovieHtml
     /** Takes in an event and deletes that event's parent. */
     function deleteLi(evt) {
       $(evt.target).parent().remove();
