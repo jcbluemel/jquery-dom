@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <form>
+  <form method="GET" action="movie.html">
     <label for="movie">Movie Name:</label>
     <input id="movie-name" name="movie" class="movie-form" type="text" minlength="2">
     <label for="rating">Rating:</label>
@@ -20,7 +22,7 @@
 
   <script src="https://unpkg.com/jquery"></script>
   <script>
-    /** Takes in an evt, stops the page from reloading and adds the user 
+    /** Takes in an evt, stops the page from reloading and adds the user
      *  input for movie name and rating to the UL*/
     function addMovie(evt) {
       evt.preventDefault();
@@ -28,7 +30,7 @@
       let movieName = $("#movie-name").val();
       let movieRating = $("#movie-rating").val();
 
-      let newMovieLi = `<li>${movieName} : ${movieRating} 
+      let newMovieLi = `<li>${movieName} : ${movieRating}
         <button>Delete movie</button></li>`;
 
       $(".movie-list").append(newMovieLi);
@@ -40,7 +42,8 @@
     }
 
     $('form').submit(addMovie);
-    $('ul').on('click', 'button', deleteLi) // Deleted li if button is clicked.
+    $('ul').on('click', 'button', deleteLi); // Deleted li if button is clicked.
   </script>
 </body>
+
 </html>
